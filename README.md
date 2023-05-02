@@ -6,5 +6,7 @@ Então resolvi começar um projeto simples apenas para ir aprendendo os conceito
 A ideia aqui é que eu tenho uma tarefa a ser realizada em certos dias, e uso o programa para ir dizendo
 quando eu faço e quando não.
 
+Mas pode ser usada para tratar vícios os criar novos hábitos.
+
 Funciona com um servidor em Flask, Python
 e salvo as informações em um SQLITE
