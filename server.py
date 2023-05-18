@@ -3,6 +3,8 @@ from db import ConnectionDb
 
 app = Flask(__name__)
 
+connection = ConnectionDb()
+
 @app.route("/")
 def home():
     render_template("templates/index.html")

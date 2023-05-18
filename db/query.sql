@@ -6,9 +6,23 @@ CREATE TABLE tarefa(
 );
 
 CREATE TABLE dia(
-	id INT PRIMARY KEY NOT NULL,
-    nome TEXT,
-    isDone BOOL DEFAULT FALSE,
-    myTarefa TEXT,
-    FOREIGN KEY(myTarefa) REFERENCES tarefa(nome)
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT
 );
+
+CREATE TABLE tarefas_feitas(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT,
+  idDia INTEGER,
+  isDone BOOL DEFAULT FALSE,
+  FOREIGN KEY (nome) REFERENCES tarefa(nome),
+  FOREIGN KEY (idDia) REFERENCES dia(id)
+);
+
+INSERT INTO dia (nome) VALUES ('segunda');
+INSERT INTO dia (nome) VALUES ('terça');
+INSERT INTO dia (nome) VALUES ('quarta');
+INSERT INTO dia (nome) VALUES ('quinta');
+INSERT INTO dia (nome) VALUES ('sexta');
+INSERT INTO dia (nome) VALUES ('sabado');
+INSERT INTO dia (nome) VALUES ('domingo');
