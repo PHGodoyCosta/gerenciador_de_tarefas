@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de tarefa</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <h1>Essa Semana</h1>
@@ -115,7 +116,13 @@
             </p>
         </div>
     </div>
+    <div class="star-area">
+        <div class="star-line">
+            <img src="../static/images/star.png" alt="Estrela" id="star">
+            <span id="star-count">2</span>
+        </div>
+    </div>
     <h1 id="promessa">Não vou mais beber!</h1>
-    <script src="../js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

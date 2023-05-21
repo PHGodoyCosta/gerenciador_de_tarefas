@@ -14,11 +14,13 @@ class ConnectionDb:
         return self.cursor.fetchall()[0]
     
     def getDias(self, tarefa):
-        self.cursor.execute(f"SELECT * dias WHERE %(tarefa)s = myTarefa", {tarefa: tarefa})
+        self.cursor.execute("SELECT segunda, terca, quarta, quinta, sexta, sabado, domingo FROM tarefa WHERE nome = %(tarefa)s", {tarefa: tarefa})
         return self.cursor.fetchall()[0]
 
-    def setStateDia(self, tarefa, dia):
-        self.cursor.execute("UPDATE ")
+    def setStateDia(self, tarefa, dia, state):
+        self.cursor.execute("UPDATE tarefa SET %(dia)s = %(state)s WHERE nome = %(tarefa)s", {dia: dia, state: state, tarefa: tarefa})
+
+        self.con.commit()
 
 if __name__ == "__main__":
     starter = ConnectionDb()
